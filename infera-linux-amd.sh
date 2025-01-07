@@ -23,11 +23,11 @@ download_and_setup() {
 
     # Move the file to ~/
     echo -e "${YELLOW}Moving the file to ~/ ...${NC}"
-    sudo mv infera ~/
+    mv infera ~/
 
     # Make the file executable
     echo -e "${YELLOW}Making the file executable...${NC}"
-    sudo chmod +x ~/infera
+    chmod +x ~/infera
 }
 
 # Check if the file already exists
@@ -37,7 +37,7 @@ if [ -f "$FILE" ]; then
     read -p "Do you want to remove the existing file and redownload it? (y/n): " choice
     if [ "$choice" = "y" ]; then
         echo -e "${YELLOW}Removing existing file...${NC}"
-        sudo rm -f ~/infera
+        rm -f ~/infera
         download_and_setup
     fi
 else
